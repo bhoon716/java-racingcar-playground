@@ -23,4 +23,10 @@ public class Race {
             car.move();
         }
     }
+
+    public RaceResultDto getRaceResult(){
+        RaceResultDto raceResult = new RaceResultDto();
+        cars.forEach(car -> raceResult.addResult(car));
+        return raceResult;
+    }
 }

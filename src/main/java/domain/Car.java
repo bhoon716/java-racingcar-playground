@@ -17,4 +17,9 @@ public class Car {
     public int getCarLocation(){
         return carLocation.getLocation();
     }
+
+    @Override
+    public String toString(){
+        return carName + " : " + carLocation;
+    }
 }

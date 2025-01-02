@@ -5,9 +5,11 @@ import java.util.Objects;
 public class CarLocation {
 
     private int location;
+    private String distance;
 
     public CarLocation() {
         this.location = 0;
+        this.distance = "";
     }
 
     public int getLocation() {
@@ -16,6 +18,7 @@ public class CarLocation {
 
     public void move(){
         location++;
+        distance += "-";
     }
 
     @Override
@@ -29,5 +32,10 @@ public class CarLocation {
     @Override
     public int hashCode(){
         return Objects.hash(location);
+    }
+
+    @Override
+    public String toString(){
+        return distance;
     }
 }

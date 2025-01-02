@@ -1,5 +1,6 @@
 package controller;
 
+import domain.RaceResultDto;
 import service.RaceService;
 import view.InputView;
 import view.OutputView;
@@ -27,10 +28,12 @@ public class RaceController {
 
     }
 
-    public void startRace(int times){
+    private void startRace(int times){
+        outputView.printString("\n실행 결과");
         for(int i = 0; i < times; i++){
             raceService.startRace();
-
+            RaceResultDto raceResult = raceService.getRaceResult();
+            outputView.printRaceResult(raceResult);
         }
     }
 }

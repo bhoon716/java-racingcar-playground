@@ -1,5 +1,7 @@
 package view;
 
+import domain.RaceResultDto;
+
 public class OutputViewImpl implements OutputView{
 
     @Override
@@ -10,5 +12,15 @@ public class OutputViewImpl implements OutputView{
     @Override
     public void printEnterTimes() {
         System.out.println("시도할 회수는 몇회인가요?");
+    }
+
+    @Override
+    public void printString(String str) {
+        System.out.println(str);
+    }
+
+    @Override
+    public void printRaceResult(RaceResultDto raceResult) {
+        System.out.println(raceResult.toString()+"\n");
     }
 }

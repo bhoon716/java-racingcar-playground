@@ -1,9 +1,6 @@
 package service;
 
-import domain.Car;
-import domain.CarLocation;
-import domain.CarName;
-import domain.Race;
+import domain.*;
 
 import java.util.Arrays;
 
@@ -25,5 +22,10 @@ public class RaceServiceImpl implements RaceService{
     @Override
     public void startRace() {
         race.startRace();
+    }
+
+    @Override
+    public RaceResultDto getRaceResult() {
+        return race.getRaceResult();
     }
 }
