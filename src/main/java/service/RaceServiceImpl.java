@@ -11,6 +11,7 @@ public class RaceServiceImpl implements RaceService{
 
     private final Race race = new Race();
 
+    @Override
     public void setCars(String carNames) {
         String[] names = carNames.split(",");
         Arrays.stream(names).forEach(name -> {
@@ -19,5 +20,10 @@ public class RaceServiceImpl implements RaceService{
             Car car = new Car(carName, carLocation);
             race.addCar(car);
         });
+    }
+
+    @Override
+    public void setTimes(int times) {
+        race.setTimes(times);
     }
 }
