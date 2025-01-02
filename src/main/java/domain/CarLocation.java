@@ -7,4 +7,12 @@ public class CarLocation {
     public CarLocation() {
         this.location = 0;
     }
+
+    public int getLocation() {
+        return location;
+    }
+
+    public void move(){
+        location++;
+    }
 }
