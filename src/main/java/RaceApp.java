@@ -14,6 +14,10 @@ public class RaceApp {
         final RaceService raceService = new RaceServiceImpl();
         final RaceController raceController = new RaceController(inputView, outputView, raceService);
 
-        raceController.initRace();
+        try {
+            raceController.initRace();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

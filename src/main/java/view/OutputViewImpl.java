@@ -1,6 +1,10 @@
 package view;
 
+import domain.Car;
 import domain.RaceResultDto;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OutputViewImpl implements OutputView{
 
@@ -22,5 +26,14 @@ public class OutputViewImpl implements OutputView{
     @Override
     public void printRaceResult(RaceResultDto raceResult) {
         System.out.println(raceResult.toString()+"\n");
+    }
+
+    @Override
+    public void printWinner(List<Car> winner) {
+        List<String> winnerName = new ArrayList<>();
+        winner.forEach(car -> winnerName.add(car.getCarName()));
+        String winners = String.join(", ", winnerName);
+        System.out.print("최종 우승자 : " + winners);
+
     }
 }

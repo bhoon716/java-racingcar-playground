@@ -1,9 +1,12 @@
 package controller;
 
+import domain.Car;
 import domain.RaceResultDto;
 import service.RaceService;
 import view.InputView;
 import view.OutputView;
+
+import java.util.List;
 
 public class RaceController {
 
@@ -25,7 +28,7 @@ public class RaceController {
         outputView.printEnterTimes();
         int times = inputView.readTimes();
         startRace(times);
-
+        printWinner();
     }
 
     private void startRace(int times){
@@ -35,5 +38,10 @@ public class RaceController {
             RaceResultDto raceResult = raceService.getRaceResult();
             outputView.printRaceResult(raceResult);
         }
+    }
+
+    private void printWinner() {
+        List<Car> winner = raceService.getWinner();
+        outputView.printWinner(winner);
     }
 }

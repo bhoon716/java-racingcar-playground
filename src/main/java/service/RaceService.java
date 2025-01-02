@@ -1,6 +1,9 @@
 package service;
 
+import domain.Car;
 import domain.RaceResultDto;
+
+import java.util.List;
 
 public interface RaceService {
 
@@ -9,4 +12,6 @@ public interface RaceService {
     void startRace();
 
     RaceResultDto getRaceResult();
+
+    List<Car> getWinner();
 }

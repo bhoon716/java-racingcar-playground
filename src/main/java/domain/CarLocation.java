@@ -36,6 +36,6 @@ public class CarLocation {
 
     @Override
     public String toString(){
-        return distance;
+        return distance + location;
     }
 }

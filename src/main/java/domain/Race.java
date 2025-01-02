@@ -29,4 +29,21 @@ public class Race {
         cars.forEach(car -> raceResult.addResult(car));
         return raceResult;
     }
+
+    public List<Car> getWinner(){
+        List<Car> winner = new ArrayList<>();
+        int max = 0;
+        for(Car car : cars){
+            if(car.getCarLocation() > max){
+                winner = new ArrayList<>();
+                winner.add(car);
+                max = car.getCarLocation();
+                continue;
+            }
+            if(car.getCarLocation() == max){
+                winner.add(car);
+            }
+        }
+        return winner;
+    }
 }

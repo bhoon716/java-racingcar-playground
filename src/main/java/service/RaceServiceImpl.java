@@ -3,6 +3,7 @@ package service;
 import domain.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class RaceServiceImpl implements RaceService{
 
@@ -27,5 +28,10 @@ public class RaceServiceImpl implements RaceService{
     @Override
     public RaceResultDto getRaceResult() {
         return race.getRaceResult();
+    }
+
+    @Override
+    public List<Car> getWinner() {
+        return race.getWinner();
     }
 }
