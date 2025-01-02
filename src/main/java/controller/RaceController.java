@@ -16,13 +16,21 @@ public class RaceController {
         this.raceService = raceService;
     }
 
-    public void startRace() {
+    public void initRace() {
         outputView.printEnterCarNames();
         String carNames = inputView.readCarNames();
         raceService.setCars(carNames);
 
         outputView.printEnterTimes();
         int times = inputView.readTimes();
-        raceService.setTimes(times);
+        startRace(times);
+
+    }
+
+    public void startRace(int times){
+        for(int i = 0; i < times; i++){
+            raceService.startRace();
+
+        }
     }
 }

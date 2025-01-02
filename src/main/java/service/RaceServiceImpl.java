@@ -23,7 +23,7 @@ public class RaceServiceImpl implements RaceService{
     }
 
     @Override
-    public void setTimes(int times) {
-        race.setTimes(times);
+    public void startRace() {
+        race.startRace();
     }
 }
